@@ -1,0 +1,143 @@
+/* Estilos generales */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: gainsboro;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.icon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  transition-property: 
+      outline-offset, outline color,
+      background-color;
+  transition-duration: 0.25s;
+}
+
+#cuenta-car{
+  border-radius: 100%;
+  display: inline-block;
+  width: 20px;
+  aspect-ratio: 1;
+  text-align: center;
+  line-height: 20px;
+  color: red; 
+}
+
+/* Estilos para la sección de detalles del producto */
+.product-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  text-align: center;
+  width: 40%;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.info-container {
+  width: 50%;
+}
+
+.info-container h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Estilos para las calificaciones */
+.ratings {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-stars {
+  font-size: 20px;
+  color: #ffc107;
+  margin-right: 5px;
+}
+
+.rating-value {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.reviews-count {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Estilos para el precio */
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.oferta {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: green;
+}
+
+.button-container {
+  display: flex;
+  align-content: center;
+}
+
+button {
+  width: 50%;
+  padding: 10px;
+  margin: 15px;
+  background-color: rgb(85, 16, 150);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: font-weight 0.3s ease;
+    font-weight: bold;
+}

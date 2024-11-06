@@ -1,0 +1,86 @@
+.producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre los elementos */
+    gap: 40px; /* Espacio entre cada elemento */
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.producto-imagen {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}
+
+.producto-nombre {
+    flex: 1; /* Ocupa más espacio en la fila */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.producto-precio,
+.producto-cantidad {
+    text-align: center;
+    width: 70px;
+}
+
+
+.producto-eliminar {
+    background-color: orange;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+}
+
+/* Asegura que el contenedor general tenga suficiente espacio */
+#carrito-contenedor {
+    padding: 10px;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #47bfff, #1a44c2);
+    width: 200px;
+    text-align: center;
+}
+
+.boton-pago {
+    font-size: 1em;
+    width: 200px;
+    padding: 10px 20px;
+    background-color: #1a44c2;
+    color: #ffffff;
+    border: none;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-pago:hover {
+    color: #ddd;
+    box-shadow: 1px 1px 200px #252525;
+    border: none;
+    background: linear-gradient(45deg, #47bfff, #1a44c2);
+
+}
