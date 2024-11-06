@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Productos Tecnológicos</title>
+    <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/promociones.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <script src="js/pago.js"></script>
+
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+    <div class="nav"> 
+        <a href="contacto.html">Contacto</a>
+        <a href="index.html">Promociones</a>
+    </div>
+    <main>
+        <!-- Contenedor donde se mostrarán los productos del carrito -->
+        <div id="carrito-contenedor"></div>
+        <button class="boton-pago">Continuar pago</button>
+    </main>
+    
+        
+    <div id="modal-pago" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Información de Pago</h2>
+            <form id="form-pago">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+    
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required>
+    
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" required>
+    
+                <label for="pais">País:</label>
+                <input type="text" id="pais" required>
+    
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" required maxlength="16">
+    
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required maxlength="3">
+    
+                <button type="submit" class="boton-pagar">Pagar</button>
+            </form>
+        </div>
+    </div>    
+
+    
+    
+    <script src="js/carro.js"></script>
+
+</body>
+</html>

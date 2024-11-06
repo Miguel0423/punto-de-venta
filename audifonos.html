@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Audífonos</title>
+        <link rel="stylesheet" href="css/teclado.css"/>
+        <link rel="stylesheet" href="css/pia.css"/>
+        <script src="js/carro.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="nav"> 
+                <a href="contacto.html">Contacto</a>
+                <a href="index.html">Promociones</a>
+                <a class="icon" href="carrito.html">
+                    <img src="imagenes/car.png" alt="Carro de Compras"><span id="cuenta-car">0</span>
+                </a>     
+            </div>
+        </header>
+        
+        <main>
+            <section class="product-details">
+                <div class="image-container">
+                    <img src="imagenes/audifono.jpg" alt="audífonos">
+                </div>
+                <div class="info-container">
+                    <h1>Razer Auriculares gaming Kraken X Lite</h1>
+                    <p>Tipo de producto: Auriculares, Estilo de uso: Diadema, Uso recomendado: Gaming.
+                        Tecnología de conectividad: Con cable.
+                        Auriculares: Supraaural, Sistema acústico: Cerrado, Frecuencia de auriculares: 12 - 28000 Hz.
+                        Tipo de micrófono: Boom, Frecuencia de micrófono: 100 - 10000 Hz, Sensibilidad del micrófono: -45 dB.
+                        Ancho: 160 mm, Profundidad: 88 mm, Altura: 210 mm.</p>
+                    <div class="ratings">
+                        <span class="rating-stars">★★★★</span>
+                        <span class="rating-value">4.6</span>
+                        <span class="reviews-count">3721 calificaciones</span>
+                    </div>
+                    <div class="price">$600</div>
+                    <div class="oferta">$510 MXN</div>
+                    <button onclick="addToCart('Razer Auriculares gaming Kraken X Lites', 510, 'imagenes/audifono.jpg')">Agregar al carrito</button>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+        </footer>
+    
+        <script src="script.js"></script>
+    </body>
+</html>

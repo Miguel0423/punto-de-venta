@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drone</title>
+        <link rel="stylesheet" href="css/teclado.css"/>
+        <link rel="stylesheet" href="css/pia.css"/>
+        <script src="js/carro.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="nav"> 
+                <a href="contacto.html">Contacto</a>
+                <a href="index.html">Promociones</a>
+                <a class="icon" href="carrito.html">
+                    <img src="imagenes/car.png" alt="Carro de Compras">
+                    <span id="cuenta-car">0</span>
+                </a>     
+            </div>
+        </header>
+        <main>
+            <section class="product-details">
+                <div class="image-container">
+                    <img src="imagenes/drone.jpg" alt="Drone">
+                </div>
+                <div class="info-container">
+                    <h1>Dron GPS con dual cámara 4K,Drone Professional con EIS y motores sin escobillas</h1>
+                    <p>Menos de 249 g
+                        Grabación vertical en 4K/60 fps HDR
+                        Detección de obstáculos omnidireccional
+                        Vida de la batería aumentada
+                        Transmisión de vídeo FHD a 20 km
+                        ActiveTrack 360°</p>
+                    <div class="ratings">
+                        <span class="rating-stars">★★★★</span>
+                        <span class="rating-value">4.3</span>
+                        <span class="reviews-count">2275 calificaciones</span>
+                    </div>
+                    <div class="price">$6300</div>
+                    <div class="oferta">$5190 MXN</div>
+                    <div class="button-container">
+                        <button onclick="addToCart('Dron GPS con dual cámara 4K', 5190, 'imagenes/drone.jpg')">Agregar al carrito</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+        </footer>
+    
+        <script src="script.js"></script>
+    </body>
+</html>

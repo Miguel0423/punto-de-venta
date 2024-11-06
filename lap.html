@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Laptop</title>
+        <link rel="stylesheet" href="css/teclado.css"/>
+        <link rel="stylesheet" href="css/pia.css"/>
+        <script src="js/carro.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="nav"> 
+                <a href="contacto.html">Contacto</a>
+                <a href="index.html">Promociones</a>
+                <a class="icon" href="carrito.html">
+                    <img src="imagenes/car.png" alt="Carro de Compras">
+                    <span id="cuenta-car">0</span>
+                </a>     
+            </div>
+        </header>
+        <main>
+            <section class="product-details">
+                <div class="image-container">
+                    <img src="imagenes/laptop.jpg" alt="Laptop">
+                </div>
+                <div class="info-container">
+                    <h1>Lenovo Laptop IdeaPad 3 15ALC6</h1>
+                    <p>Touchscreen AMD Ryzen 7 5700U 8GB RAM 512GB SSD | Altavoces 1.5W Dolby Audio Cámara HD 720p | Teclado Retroiluminado Incluye Mochila</p>
+                    <div class="ratings">
+                        <span class="rating-stars">★★★★</span>
+                        <span class="rating-value">4.5</span>
+                        <span class="reviews-count">3180 calificaciones</span>
+                    </div>
+                    <div class="price">$8600</div>
+                    <div class="oferta">$6910 MXN</div>
+                    <div class="button-container">
+                        <button onclick="addToCart('Lenovo Laptop IdeaPad 3 15ALC6', 6910, 'imagenes/laptop.jpg')">Agregar al carrito</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+        </footer>
+    
+        <script src="script.js"></script>
+    </body>
+</html>
