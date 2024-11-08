@@ -3,19 +3,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 500px;
-    max-height: 540px; /* Altura máxima de la ventana modal */
+    width: 100%;
+    max-width: 400px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    overflow-y: auto; /* Agrega barra de desplazamiento vertical */
     padding: 20px;
     box-sizing: border-box;
 }
 
-/* Fondo oscuro detrás de la ventana modal */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -26,13 +23,58 @@
     z-index: 999;
 }
 
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 400px;
+.modal-content h2 {
+    font-size: 14px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.exp-cvv {
+    display: flex;
+    gap: 10px;
+}
+
+.exp-cvv div {
+    flex: 1;
+}
+
+.boton-pagar {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(180deg, #333, #000);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.boton-pagar:hover {
+    background: linear-gradient(180deg, #444, #111);
 }
 
 .close {
@@ -46,29 +88,4 @@
 .close:hover,
 .close:focus {
     color: #000;
-    text-decoration: none;
-}
-
-#form-pago label {
-    display: block;
-    margin-top: 10px;
-}
-
-#form-pago input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-}
-
-#form-pago .boton-pagar {
-    width: 100%;
-    padding: 10px;
-    background-color: #6a0dad;
-    color: #fff;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
 }

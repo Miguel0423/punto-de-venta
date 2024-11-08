@@ -1,56 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Actualiza el contador del carrito en cada página donde aparece
-    actualizarContadorCarrito();
+    // Selección de elementos necesarios
+    const modalPago = document.getElementById("modal-pago");
+    const modalOverlay = document.getElementById("modal-overlay");
+    const btnContinuarPago = document.querySelector(".boton-pago");
+    const closeModal = document.querySelector(".close");
 
-    // Verifica si estás en la página del carrito de compras
-    if (document.title === "Carrito de Compras - Productos Tecnológicos") {
-        mostrarCarrito(); // Solo se ejecuta en la página del carrito
+    // Mostrar el modal y la capa oscura al hacer clic en "Continuar pago"
+    btnContinuarPago.addEventListener("click", (event) => {
+        event.preventDefault();
+        modalPago.style.display = "block";
+        modalOverlay.style.display = "block";
+    });
 
-        // Variables para el modal de pago
-        const modalPago = document.getElementById("modal-pago");
-        const btnContinuarPago = document.querySelector(".boton-pago");
-        const closeModal = document.querySelector(".close");
-
-        // Asegura que el modal esté oculto por defecto al cargar la página
+    // Cerrar el modal y la capa oscura al hacer clic en la "X"
+    closeModal.addEventListener("click", () => {
         modalPago.style.display = "none";
+        modalOverlay.style.display = "none";
+    });
 
-        // Mostrar modal al hacer clic en el botón "Continuar pago"
-        btnContinuarPago.addEventListener("click", (event) => {
-            event.preventDefault();
-            modalPago.style.display = "block"; // Solo se abre al hacer clic
-        });
-
-        // Cerrar modal al hacer clic en la "X"
-        closeModal.addEventListener("click", () => {
+    // Cerrar el modal al hacer clic fuera del contenido del modal
+    window.addEventListener("click", (event) => {
+        if (event.target === modalOverlay) {
             modalPago.style.display = "none";
-        });
+            modalOverlay.style.display = "none";
+        }
+    });
 
-        // Cerrar modal al hacer clic fuera del contenido del modal
-        window.addEventListener("click", (event) => {
-            if (event.target === modalPago) {
-                modalPago.style.display = "none";
-            }
-        });
+    // Validación y acción al enviar el formulario de pago
+    document.getElementById("form-pago").addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        // Enviar el formulario de pago
-        document.getElementById("form-pago").addEventListener("submit", (event) => {
-            event.preventDefault();
+        // Validación básica de campos
+        const nombre = document.getElementById("nombre").value;
+        const tarjeta = document.getElementById("tarjeta").value;
+        const exp = document.getElementById("exp").value;
+        const cvv = document.getElementById("cvv").value;
 
-            // Validación de los campos (opcional)
-            const nombre = document.getElementById("nombre").value;
-            const apellido = document.getElementById("apellido").value;
-            const telefono = document.getElementById("telefono").value;
-            const pais = document.getElementById("pais").value;
-            const tarjeta = document.getElementById("tarjeta").value;
-            const cvv = document.getElementById("cvv").value;
-
-            if (nombre && apellido && telefono && pais && tarjeta && cvv) {
-                alert("Pago realizado con éxito.");
-                modalPago.style.display = "none"; // Cierra el modal
-                // Aquí puedes agregar cualquier acción adicional después de completar el pago
-            } else {
-                alert("Por favor, complete todos los campos.");
-            }
-        });
-    }
+        if (nombre && tarjeta && exp && cvv) {
+            alert("Pago realizado con éxito.");
+            modalPago.style.display = "none";
+            modalOverlay.style.display = "none";
+            // Puedes añadir acciones adicionales después del pago aquí
+        } else {
+            alert("Por favor, complete todos los campos.");
+        }
+    });
 });

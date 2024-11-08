@@ -78,7 +78,7 @@ footer {
 .nav {
     display: flex;
     justify-content: space-around;
-    background-color: gainsboro;
+    background-color: #bdbdbd;
     padding: 10px;
     border-radius: 5px;
 }
