@@ -8,8 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mostrar el modal y la capa oscura al hacer clic en "Continuar pago"
     btnContinuarPago.addEventListener("click", (event) => {
         event.preventDefault();
-        modalPago.style.display = "block";
-        modalOverlay.style.display = "block";
+        const total = obtenerTotalCarrito();
+        if (total > 0) {
+            modalPago.style.display = "block";
+            modalOverlay.style.display = "block";
+        } else {
+            alert("El carrito está vacío. Agrega productos antes de continuar con el pago.");
+        }
     });
 
     // Cerrar el modal y la capa oscura al hacer clic en la "X"

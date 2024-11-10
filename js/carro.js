@@ -83,7 +83,7 @@ function mostrarCarrito() {
     // Total
     const totalElemento = document.createElement("div");
     totalElemento.classList.add("total");
-    totalElemento.innerText = `Total a Pagar: $${total}`;
+    totalElemento.innerText = `Total: $${total}`;
     contenedorCarrito.appendChild(totalElemento);
 }
 
@@ -115,5 +115,8 @@ function addToCart(nombre, precio, imagen) {
     alert("Producto agregado al carrito");
 }
 
-
+function obtenerTotalCarrito() {
+    const carrito = obtenerCarrito();
+    return carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
+}
 
