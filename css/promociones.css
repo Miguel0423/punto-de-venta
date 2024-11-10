@@ -7,7 +7,7 @@ body {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: yellow;
     padding: 1rem 0;
     text-align: center;
 }
@@ -78,7 +78,7 @@ footer {
 .nav {
     display: flex;
     justify-content: space-around;
-    background-color: #bdbdbd;
+    background-color: #b0b0b0;
     padding: 10px;
     border-radius: 5px;
 }
