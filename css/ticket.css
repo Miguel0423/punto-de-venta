@@ -1,0 +1,21 @@
+#detalle-recibo p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+#detalle-recibo strong {
+    font-weight: bold;
+}
+
+#detalle-recibo {
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+#recibo-compra {
+    display: none;
+}
+
+#modal-overlay-recibo {
+    display: none;
+}
