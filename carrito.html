@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/carrito.css">
     <link rel="stylesheet" href="css/promociones.css">
     <link rel="stylesheet" href="css/formulario.css">
-    <script src="js/pago.js"></script>
+    <link rel="stylesheet" href="css/ticket.css">
 
 </head>
 <body>
@@ -54,10 +54,19 @@
         </div>
     </div>
 
-    
+    <div id="recibo-compra" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-recibo">&times;</span>
+            <h2>Recibo de Compra</h2>
+            <div id="detalle-recibo"></div>
+            <button id="cerrar-recibo">Cerrar</button>
+        </div>
+    </div>
+    <div id="modal-overlay-recibo"></div>
     
     
     <script src="js/carro.js"></script>
+    <script src="js/pago.js"></script>
 
 </body>
 </html>

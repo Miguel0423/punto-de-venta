@@ -27,9 +27,16 @@
                 <input type="email" id="email" name="email"><br><br>
                 <label for="message">Mensaje:</label>
                 <textarea id="message" name="message"></textarea><br><br>
-                <button class="button type1">
+                <button class="button type1" onclick="mostrarMensaje(event)">
                     <span class="btn-txt">Enviar</span>
                 </button>
+                
+                <script>
+                    function mostrarMensaje(event) {
+                        event.preventDefault(); // Evita que se envíe el formulario inmediatamente
+                        alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
+                    }
+                </script>
             </form>
         </section>
         <section>
