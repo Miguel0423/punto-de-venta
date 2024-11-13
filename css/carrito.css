@@ -15,6 +15,7 @@
     width: 100px;
     height: auto;
     object-fit: cover;
+    margin: 5px;
 }
 
 .producto-nombre {
@@ -40,6 +41,7 @@
     text-align: center;
     width: 100px;
     height: 30px;
+    margin: 5px;
 }
 
 /* Asegura que el contenedor general tenga suficiente espacio */
