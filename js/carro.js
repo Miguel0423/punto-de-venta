@@ -14,7 +14,7 @@ function obtenerCarrito() {
 
 function guardarCarrito(carrito) {
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    actualizarContadorCarrito(); // Actualiza el contador cada vez que se guarda el carrito
+    actualizarContadorCarrito(); 
 }
 
 function actualizarContadorCarrito() {
@@ -22,7 +22,7 @@ function actualizarContadorCarrito() {
     const cuentaCar = document.getElementById("cuenta-car");
     const totalProductos = carrito.reduce((total, producto) => total + producto.cantidad, 0);
     if (cuentaCar) {
-        cuentaCar.innerText = totalProductos; // Actualiza el contador en el ícono del carrito
+        cuentaCar.innerText = totalProductos; 
     }
 }
 
@@ -30,7 +30,7 @@ function mostrarCarrito() {
     const carrito = obtenerCarrito();
     const contenedorCarrito = document.getElementById("carrito-contenedor");
 
-    contenedorCarrito.innerHTML = ""; // Limpia el contenedor antes de mostrar los productos
+    contenedorCarrito.innerHTML = ""; 
 
     let total = 0;
 
@@ -91,14 +91,14 @@ function actualizarCantidad(index, nuevaCantidad) {
     const carrito = obtenerCarrito();
     carrito[index].cantidad = nuevaCantidad;
     guardarCarrito(carrito);
-    mostrarCarrito(); // Actualiza la vista sin recargar la página
+    mostrarCarrito(); 
 }
 
 function eliminarProducto(index) {
     const carrito = obtenerCarrito();
     carrito.splice(index, 1);
     guardarCarrito(carrito);
-    mostrarCarrito(); // Actualiza la vista sin recargar la página
+    mostrarCarrito(); 
 }
 
 function addToCart(nombre, precio, imagen) {
@@ -106,7 +106,7 @@ function addToCart(nombre, precio, imagen) {
     const productoExistente = carrito.find(producto => producto.nombre === nombre);
     
     if (productoExistente) {
-        productoExistente.cantidad += 1; // Incrementa la cantidad si el producto ya está en el carrito
+        productoExistente.cantidad += 1;
     } else {
         carrito.push({ nombre, precio, imagen, cantidad: 1 });
     }
