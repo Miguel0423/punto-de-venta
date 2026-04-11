@@ -3,127 +3,249 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promociones de Productos</title>
+    <title>NexGenTech Electronics - Promociones</title>
     <link rel="stylesheet" href="css/promociones.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="js/carro.js"></script>
-    <script>scr</script>
 </head>
 <body>
-    <header>
-        <h1>¡Aprovecha nuestras promociones!</h1>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>NexGenTech</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html" class="active"><i class="fas fa-tag"></i> Ofertas</a>
+                <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+            </nav>
+            <a href="carrito.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cuenta-car">0</span>
+            </a>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
     </header>
 
-    <div class="nav"> 
-        <a href="contacto.html">Contacto</a>
-        <a class="icon" href="carrito.html"><img src="imagenes/car.png" alt="Carro de Compras"><span id="cuenta-car">0</span></a>   
-    </div>
-    
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge"><i class="fas fa-fire"></i> Ofertas de Temporada</span>
+            <h1>Descubre las Mejores <span>Tecnologías</span> a Precios Increíbles</h1>
+            <p>Hasta 30% de descuento en productos seleccionados. ¡No te los pierdas!</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Productos en Oferta</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Descuento Máximo</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Envío Express</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+    </section>
+
     <main>
+        <div class="section-header">
+            <h2><i class="fas fa-fire-alt"></i> Productos en Promoción</h2>
+            <p>Encuentra las mejores ofertas en tecnología de última generación</p>
+        </div>
+
         <section class="promociones">
             <article class="promocion">
-                <a href="impresora.html"><img src="imagenes/a.png" alt="impresora 3D"></a>
-                <h2><a href="impresora.html">Impresora 3D</a></h2>
-                <p><strong>Precio:</strong> $12000 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $11400 MXN</p>
-                <p><strong>Descripción:</strong> Impresora 3D de alta precisión para proyectos profesionales y educativos.</p>
-                <div class="button-container">
-                    <a href="impresora.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge">-5%</div>
+                <div class="product-image">
+                    <img src="imagenes/a.png" alt="Impresora 3D">
+                    <div class="overlay">
+                        <a href="impresora.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-cube"></i> Impresión 3D</span>
+                    <h3><a href="impresora.html">Impresora 3D</a></h3>
+                    <p class="description">Impresora 3D de alta precisión para proyectos profesionales y educativos.</p>
+                    <div class="price-container">
+                        <span class="original-price">$12,000 MXN</span>
+                        <span class="discount-price">$11,400 MXN</span>
+                    </div>
+                    <a href="impresora.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
 
             <article class="promocion">
-                <a href="teclado.html"><img src="imagenes/teclado.jpg" alt="Teclado"></a>
-                <h2><a href="teclado.html">Teclado Mecánico</a></h2>
-                <p><strong>Precio Regular:</strong> $500 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $400 MXN</p>
-                <p><strong>Descripción:</strong> Teclado mecánico con retroiluminación RGB y teclas programables.</p>
-                <div class="button-container">
-                    <a href="teclado.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge">-20%</div>
+                <div class="product-image">
+                    <img src="imagenes/teclado.jpg" alt="Teclado Mecánico">
+                    <div class="overlay">
+                        <a href="teclado.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-keyboard"></i> Periféricos</span>
+                    <h3><a href="teclado.html">Teclado Mecánico RGB</a></h3>
+                    <p class="description">Teclado mecánico con retroiluminación RGB y teclas programables.</p>
+                    <div class="price-container">
+                        <span class="original-price">$500 MXN</span>
+                        <span class="discount-price">$400 MXN</span>
+                    </div>
+                    <a href="teclado.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
 
             <article class="promocion">
-                <a href="pantalla.html"><img src="imagenes/pantalla.jpg" alt="Monitor"></a>
-                <h2><a href="pantalla.html">Monitor</a></h2>
-                <p><strong>Precio:</strong> $21000 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $15000 MXN</p>
-                <p><strong>Descripción:</strong> Monitor Full HD de 24 pulgadas con tecnología IPS para una experiencia visual de alta calidad.</p>
-                <div class="button-container">
-                    <a href="pantalla.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge hot">-29%</div>
+                <div class="product-image">
+                    <img src="imagenes/pantalla.jpg" alt="Monitor">
+                    <div class="overlay">
+                        <a href="pantalla.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
                 </div>
-            </article>
-
-           <!--  <article class="promocion">
-                <a href="audifonos.html"><img src="imagenes/audifono.jpg" alt="Auriculares"></a>
-                <h2><a href="audifonos.html">Auriculares</a></h2>
-                <p><strong>Precio Regular:</strong> $600 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $510 MXN</p>
-                <p><strong>Descripción:</strong> Auriculares inalámbricos con cancelación de ruido y sonido envolvente.</p>
-                <div class="button-container">
-                    <a href="audifonos.html"><button class="add-to-cart">Leer más</button></a>
-                </div>
-            </article> -->
-
-            <article class="promocion">
-                <a href="lap.html"><img src="imagenes/laptop.jpg" alt="Laptop"></a>
-                <h2><a href="lap.html">Laptop</a></h2>
-                <p><strong>Precio Regular:</strong> $8600 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $6910 MXN</p>
-                <p><strong>Descripción:</strong> Diseño delgado y elegante en una Laptop que te ofrece un gran rendimiento con SSD ultrarrápido y una pantalla de gran resolución.</p>
-                <div class="button-container">
-                    <a href="lap.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-desktop"></i> Monitores</span>
+                    <h3><a href="pantalla.html">Monitor Full HD 24"</a></h3>
+                    <p class="description">Monitor Full HD de 24 pulgadas con tecnología IPS para una experiencia visual de alta calidad.</p>
+                    <div class="price-container">
+                        <span class="original-price">$21,000 MXN</span>
+                        <span class="discount-price">$15,000 MXN</span>
+                    </div>
+                    <a href="pantalla.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
 
             <article class="promocion">
-                <a href="cel.html"><img src="imagenes/cel.png" alt="Celular"></a>
-                <h2><a href="cel.html">Celular</a></h2>
-                <p><strong>Precio Regular:</strong> $8600 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $7510 MXN</p>
-                <p><strong>Descripción:</strong> Sumérgete en la grandeza de cada momento con su pantalla Dynamic AMOLED 2X de 6.4 pulgadas.</p>
-                <div class="button-container">
-                    <a href="cel.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge">-20%</div>
+                <div class="product-image">
+                    <img src="imagenes/laptop.jpg" alt="Laptop">
+                    <div class="overlay">
+                        <a href="lap.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-laptop"></i> Computación</span>
+                    <h3><a href="lap.html">Laptop Ultradelgada</a></h3>
+                    <p class="description">Diseño delgado y elegante con SSD ultrarrápido y pantalla de gran resolución.</p>
+                    <div class="price-container">
+                        <span class="original-price">$8,600 MXN</span>
+                        <span class="discount-price">$6,910 MXN</span>
+                    </div>
+                    <a href="lap.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
 
             <article class="promocion">
-                <a href="watch.html"><img src="imagenes/reloj.jpg" alt="Smartwatch"></a>
-                <h2><a href="watch.html">Smartwatch</a></h2>
-                <p><strong>Precio Regular:</strong> $4600 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $3810 MXN</p>
-                <p><strong>Descripción:</strong> Diseño ultradelgado, Pantalla AMOLED 1.82, Monitoreo integral de ejercicio.</p>
-                <div class="button-container">
-                    <a href="watch.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge">-13%</div>
+                <div class="product-image">
+                    <img src="imagenes/cel.png" alt="Celular">
+                    <div class="overlay">
+                        <a href="cel.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-mobile-alt"></i> Móviles</span>
+                    <h3><a href="cel.html">Smartphone Premium</a></h3>
+                    <p class="description">Sumérgete en la grandeza de cada momento con pantalla Dynamic AMOLED 2X de 6.4".</p>
+                    <div class="price-container">
+                        <span class="original-price">$8,600 MXN</span>
+                        <span class="discount-price">$7,510 MXN</span>
+                    </div>
+                    <a href="cel.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
 
             <article class="promocion">
-                <a href="dron.html"><img src="imagenes/drone.jpg" alt="Drone"></a>
-                <h2><a href="dron.html">Drone</a></h2>
-                <p><strong>Precio Regular:</strong> $6300 MXN</p>
-                <p><strong>Precio con Descuento:</strong> $5190 MXN</p>
-                <p><strong>Descripción:</strong> Obtén un control de vuelo preciso con el Drone Tello con controles fáciles de utilizar y una gran variedad de funciones, es ideal para chicos y grandes.</p>
-                <div class="button-container">
-                    <a href="dron.html"><button class="add-to-cart">Leer más</button></a>
+                <div class="discount-badge">-17%</div>
+                <div class="product-image">
+                    <img src="imagenes/reloj.jpg" alt="Smartwatch">
+                    <div class="overlay">
+                        <a href="watch.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-clock"></i> Wearables</span>
+                    <h3><a href="watch.html">Smartwatch Pro</a></h3>
+                    <p class="description">Diseño ultradelgado, Pantalla AMOLED 1.82", Monitoreo integral de ejercicio.</p>
+                    <div class="price-container">
+                        <span class="original-price">$4,600 MXN</span>
+                        <span class="discount-price">$3,810 MXN</span>
+                    </div>
+                    <a href="watch.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
+                </div>
+            </article>
+
+            <article class="promocion">
+                <div class="discount-badge hot">-18%</div>
+                <div class="product-image">
+                    <img src="imagenes/drone.jpg" alt="Drone">
+                    <div class="overlay">
+                        <a href="dron.html" class="btn-quick-view"><i class="fas fa-eye"></i> Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <span class="product-category"><i class="fas fa-drone"></i> Drones</span>
+                    <h3><a href="dron.html">Drone Tello</a></h3>
+                    <p class="description">Control de vuelo preciso con controles fáciles de utilizar, ideal para chicos y grandes.</p>
+                    <div class="price-container">
+                        <span class="original-price">$6,300 MXN</span>
+                        <span class="discount-price">$5,190 MXN</span>
+                    </div>
+                    <a href="dron.html" class="btn-add"><i class="fas fa-arrow-right"></i> Ver Producto</a>
                 </div>
             </article>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
-        <a href="">
-            <img src="https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white" alt="">
-        </a>
-        <a href="">
-            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="">
-        </a>
-        <a href="">
-            <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white" alt="">
-        </a>
-        <a href="">
-            <img src="https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white" alt="">
-        </a>
-        
+
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>¡No Te Pierdas Nuestras Ofertas!</h3>
+            <p>Suscríbete para recibir las mejores promociones directamente en tu correo</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico">
+                <button type="submit"><i class="fas fa-paper-plane"></i> Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-bolt"></i>
+                    <span>NexGenTech</span>
+                </div>
+                <p>Tu tienda de tecnología de confianza. Calidad, innovación y los mejores precios del mercado.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Ofertas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+        </div>
     </footer>
 </body>
 </html>
