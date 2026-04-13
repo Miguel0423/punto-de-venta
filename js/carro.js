@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Actualiza el contador del carrito en cada página donde aparece
     actualizarContadorCarrito();
 
-    // Verifica si estás en la página del carrito de compras
-    if (document.title === "Carrito de Compras - Productos Tecnológicos") {
-        mostrarCarrito(); // Solo se ejecuta en la página del carrito
+    if (document.title === "Carrito de Compras - NexGenTech Electronics") {
+        mostrarCarrito();
     }
 });
 
@@ -32,30 +30,46 @@ function mostrarCarrito() {
 
     contenedorCarrito.innerHTML = ""; 
 
+    if (carrito.length === 0) {
+        contenedorCarrito.innerHTML = `
+            <div class="carrito-vacio">
+                <i class="fas fa-shopping-basket"></i>
+                <h3>Tu carrito está vacío</h3>
+                <p>Agrega productos para comenzar</p>
+                <a href="index.html" class="boton-seguir">
+                    <i class="fas fa-arrow-left"></i> Ver promociones
+                </a>
+            </div>
+        `;
+        actualizarTotalMostrado(0);
+        return;
+    }
+
     let total = 0;
 
     carrito.forEach((producto, index) => {
         const productoElemento = document.createElement("div");
         productoElemento.classList.add("producto");
 
-        // Imagen
         const img = document.createElement("img");
         img.src = producto.imagen;
         img.alt = producto.nombre;
         img.classList.add("producto-imagen");
+        img.onerror = function() {
+            this.src = "imagenes/placeholder.png";
+        };
         productoElemento.appendChild(img);
 
-        // Nombre
         const nombre = document.createElement("h2");
         nombre.innerText = producto.nombre;
+        nombre.classList.add("producto-nombre");
         productoElemento.appendChild(nombre);
 
-        // Precio
         const precio = document.createElement("p");
-        precio.innerText = `Precio: $${producto.precio}`;
+        precio.innerText = `$${producto.precio}`;
+        precio.classList.add("producto-precio");
         productoElemento.appendChild(precio);
 
-        // Cantidad
         const cantidad = document.createElement("input");
         cantidad.type = "number";
         cantidad.value = producto.cantidad;
@@ -66,9 +80,8 @@ function mostrarCarrito() {
         });
         productoElemento.appendChild(cantidad);
 
-        // Botón de eliminar
         const btnEliminar = document.createElement("button");
-        btnEliminar.innerText = "Eliminar";
+        btnEliminar.innerHTML = '<i class="fas fa-trash-alt"></i> Eliminar';
         btnEliminar.classList.add("producto-eliminar");
         btnEliminar.addEventListener("click", () => {
             eliminarProducto(index);
@@ -80,11 +93,14 @@ function mostrarCarrito() {
         total += producto.precio * producto.cantidad;
     });
 
-    // Total
-    const totalElemento = document.createElement("div");
-    totalElemento.classList.add("total");
-    totalElemento.innerText = `Total: $${total}`;
-    contenedorCarrito.appendChild(totalElemento);
+    actualizarTotalMostrado(total);
+}
+
+function actualizarTotalMostrado(total) {
+    const totalElement = document.getElementById("total-monto");
+    if (totalElement) {
+        totalElement.innerText = `$${total}`;
+    }
 }
 
 function actualizarCantidad(index, nuevaCantidad) {
@@ -119,4 +135,3 @@ function obtenerTotalCarrito() {
     const carrito = obtenerCarrito();
     return carrito.reduce((total, producto) => total + producto.precio * producto.cantidad, 0);
 }
-

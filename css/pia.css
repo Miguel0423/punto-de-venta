@@ -104,29 +104,7 @@ li {
     margin-bottom: 2rem;
 }
   
-.nav {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: gainsboro ;
-    padding: 10px;
-    border-radius: 5px;
-}
-.nav a:hover {
-    background-color: white;
-    color: black;
-}
-
-.icon {
-    display: inline-flex;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    outline: 2px solid #fff;
-    transition-property: 
-        outline-offset, outline color,
-        background-color;
-    transition-duration: 0.25s;
-}
+/* Los estilos de navegación están en teclado.css */
 
 .promocion {
     background-color: #fff;

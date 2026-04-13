@@ -10,23 +10,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeRecibo = document.getElementById("close-recibo");
     const btnDescargarFactura = document.getElementById("descargar-factura");
 
-    // Abrir el modal de pago al hacer clic en "Continuar pago"
-    btnContinuarPago.addEventListener("click", (event) => {
-        event.preventDefault();
-        const total = obtenerTotalCarrito();
-        if (total > 0) {
-            modalPago.style.display = "block";
-            modalOverlay.style.display = "block";
-        } else {
-            alert("El carrito está vacío. Agrega productos antes de continuar con el pago.");
-        }
-    });
+    if (btnContinuarPago) {
+        btnContinuarPago.addEventListener("click", (event) => {
+            event.preventDefault();
+            const total = obtenerTotalCarrito();
+            if (total > 0) {
+                modalPago.style.display = "block";
+                modalOverlay.style.display = "block";
+            } else {
+                alert("El carrito está vacío. Agrega productos antes de continuar con el pago.");
+            }
+        });
+    }
 
-    // Cerrar modal de pago
-    closeModal.addEventListener("click", () => {
-        modalPago.style.display = "none";
-        modalOverlay.style.display = "none";
-    });
+    if (closeModal) {
+        closeModal.addEventListener("click", () => {
+            modalPago.style.display = "none";
+            modalOverlay.style.display = "none";
+        });
+    }
 
     window.addEventListener("click", (event) => {
         if (event.target === modalOverlay) {
@@ -35,69 +37,66 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Evento al enviar el formulario de pago
-    document.getElementById("form-pago").addEventListener("submit", (event) => {
-        event.preventDefault();
+    const formPago = document.getElementById("form-pago");
+    if (formPago) {
+        formPago.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-        const nombre = document.getElementById("nombre").value;
-        const tarjeta = document.getElementById("tarjeta").value;
-        const exp = document.getElementById("exp").value;
-        const cvv = document.getElementById("cvv").value;
+            const nombre = document.getElementById("nombre").value;
+            const tarjeta = document.getElementById("tarjeta").value;
+            const exp = document.getElementById("exp").value;
+            const cvv = document.getElementById("cvv").value;
 
-        // Validación del formulario
-        if (nombre && tarjeta && exp && cvv) {
-            // Genera el recibo de compra y muestra el modal
-            generarRecibo(nombre);
+            if (nombre && tarjeta && exp && cvv) {
+                generarRecibo(nombre);
 
-            // Cierra el modal de pago después de la compra
-            modalPago.style.display = "none";
-            modalOverlay.style.display = "none";
+                modalPago.style.display = "none";
+                modalOverlay.style.display = "none";
 
-            // Limpia el carrito después de la compra
-            guardarCarrito([]);
-            actualizarContadorCarrito();
-        } else {
-            alert("Por favor, complete todos los campos.");
-        }
-    });
+                guardarCarrito([]);
+                actualizarContadorCarrito();
+                mostrarCarrito();
+            } else {
+                alert("Por favor, complete todos los campos.");
+            }
+        });
+    }
 
-    // Función para generar el recibo y mostrarlo en el modal
     function generarRecibo(nombreCliente) {
         const carrito = obtenerCarrito();
         const detalleRecibo = document.getElementById("detalle-recibo");
 
-        // Generar el contenido del recibo
-        const nombreEmpresa = "NexGenTech"; 
+        const nombreEmpresa = "NexGenTech Electronics"; 
         const numeroTicket = Math.floor(Math.random() * 1000000); 
 
         detalleRecibo.innerHTML = `
             <p><strong>Empresa:</strong> ${nombreEmpresa}</p>
-            <p><strong>Número de Ticket:</strong> ${numeroTicket}</p>
-            <p><strong>Nombre del Cliente:</strong> ${nombreCliente}</p>
-            <p><strong>Detalle de la Compra:</strong></p>
+            <p><strong>Número de Ticket:</strong> #${numeroTicket}</p>
+            <p><strong>Cliente:</strong> ${nombreCliente}</p>
+            <hr style="border: 1px solid #ddd; margin: 15px 0;">
+            <p><strong>Productos:</strong></p>
         `;
 
         let total = 0;
         carrito.forEach(producto => {
             detalleRecibo.innerHTML += `
-                <p>${producto.nombre} - Cantidad: ${producto.cantidad} - Precio: $${producto.precio}</p>
+                <p style="padding-left: 10px;">• ${producto.nombre} - Cant: ${producto.cantidad} - $${producto.precio}</p>
             `;
             total += producto.precio * producto.cantidad;
         });
 
         const totalConIva = total * 1.16;  
         detalleRecibo.innerHTML += `
-            <p><strong>Total:</strong> $${total.toFixed(2)}</p>
-            <p><strong>IVA (16%):</strong> $${(total * 0.16).toFixed(2)}</p>
-            <p><strong>Total con IVA:</strong> $${totalConIva.toFixed(2)}</p>
-            <p><strong>¡Gracias por tu compra!</strong></p>
+            <hr style="border: 1px solid #ddd; margin: 15px 0;">
+            <p><strong>Subtotal:</strong> $${total.toFixed(2)} MXN</p>
+            <p><strong>IVA (16%):</strong> $${(total * 0.16).toFixed(2)} MXN</p>
+            <p style="font-size: 1.2rem; color: #764ba2;"><strong>Total:</strong> $${totalConIva.toFixed(2)} MXN</p>
+            <p style="text-align: center; margin-top: 20px; color: #764ba2;">¡Gracias por tu compra!</p>
         `;
 
-        // Mostrar el modal con el recibo
         modalRecibo.style.display = "block";
         modalOverlayRecibo.style.display = "block";
 
-        // Guardar la información para el PDF en un atributo del detalleRecibo
         const fecha = new Date();
         const fechaFormateada = fecha.toLocaleDateString();
         const horaFormateada = fecha.toLocaleTimeString();
@@ -108,16 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("detalle-recibo").setAttribute("data-pdf-content", contenidoSoloPDF);
     }
 
-    // Cerrar modal de recibo de compra
-    btnCerrarRecibo.addEventListener("click", () => {
-        modalRecibo.style.display = "none";
-        modalOverlayRecibo.style.display = "none";
-    });
+    if (btnCerrarRecibo) {
+        btnCerrarRecibo.addEventListener("click", () => {
+            modalRecibo.style.display = "none";
+            modalOverlayRecibo.style.display = "none";
+        });
+    }
 
-    closeRecibo.addEventListener("click", () => {
-        modalRecibo.style.display = "none";
-        modalOverlayRecibo.style.display = "none";
-    });
+    if (closeRecibo) {
+        closeRecibo.addEventListener("click", () => {
+            modalRecibo.style.display = "none";
+            modalOverlayRecibo.style.display = "none";
+        });
+    }
 
     window.addEventListener("click", (event) => {
         if (event.target === modalOverlayRecibo) {
@@ -126,58 +128,50 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Descargar el recibo como factura en PDF
-    btnDescargarFactura.addEventListener("click", () => {
-        const detalleRecibo = document.getElementById("detalle-recibo");
-    
-        // Obtener el contenido adicional para el PDF
-        const contenidoSoloPDF = detalleRecibo.getAttribute("data-pdf-content");
-    
-        // Crear un div temporal con el contenido para el PDF
-        const contenidoParaPDF = document.createElement("div");
+    if (btnDescargarFactura) {
+        btnDescargarFactura.addEventListener("click", () => {
+            const detalleRecibo = document.getElementById("detalle-recibo");
         
-        // Aplicar estilos específicos para el PDF
-        contenidoParaPDF.innerHTML = `
-            <style>
-                /* Título de la factura */
-                h3 {
-                    text-align: center;
-                    font-weight: bold;
-                    font-size: 24px;
-                    margin-bottom: 10px;
-                    color: #333;
-                }
-                /* Fecha y datos del cliente */
-                p {
-                    font-size: 14px;
-                    line-height: 1.5;
-                    color: #555;
-                    margin: 5px 0;
-                }
-                /* Resaltar el total y el IVA */
-                p strong {
-                    color: #000;
-                }
-                /* Estilo para el detalle de los productos */
-                .producto-detalle {
-                    font-size: 13px;
-                    color: #333;
-                    margin-left: 10px;
-                }
-            </style>
-            ${contenidoSoloPDF}
-            ${detalleRecibo.innerHTML}
-        `
-    
-        // Generar el PDF con el contenido adicional
-        html2pdf()
-            .set({
-                margin: 1,
-                filename: 'Factura_de_Compra.pdf',
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-            })
-            .from(contenidoParaPDF)
-            .save();
-    });
+            const contenidoSoloPDF = detalleRecibo.getAttribute("data-pdf-content");
+        
+            const contenidoParaPDF = document.createElement("div");
+            
+            contenidoParaPDF.innerHTML = `
+                <style>
+                    h3 {
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 24px;
+                        margin-bottom: 10px;
+                        color: #333;
+                    }
+                    p {
+                        font-size: 14px;
+                        line-height: 1.5;
+                        color: #555;
+                        margin: 5px 0;
+                    }
+                    p strong {
+                        color: #000;
+                    }
+                    hr {
+                        border: 1px solid #ddd;
+                        margin: 15px 0;
+                    }
+                </style>
+                ${contenidoSoloPDF}
+                ${detalleRecibo.innerHTML}
+            `
+        
+            html2pdf()
+                .set({
+                    margin: 1,
+                    filename: 'Factura_NexGenTech.pdf',
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                })
+                .from(contenidoParaPDF)
+                .save();
+        });
+    }
 });

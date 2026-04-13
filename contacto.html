@@ -1,64 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/pia.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Contacto - NexGenTech Electronics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: float 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, 30px) rotate(5deg); }
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
         .contact-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px 100px;
+            padding: 50px 20px 100px;
+            position: relative;
+            z-index: 1;
         }
 
         .contact-header {
             text-align: center;
             margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-header h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+            font-weight: 700;
         }
 
         .contact-header p {
-            color: #666;
-            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
         }
 
         .contact-container {
             display: grid;
-            grid-template-columns: 1.5fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 40px;
             margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .contact-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
         }
 
         .contact-card h2 {
-            font-size: 1.5rem;
-            color: #333;
+            font-size: 1.6rem;
+            color: #1a1a2e;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 15px;
+            font-weight: 600;
         }
 
         .contact-card h2 i {
-            color: #333;
-            font-size: 1.3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            position: relative;
         }
 
         .form-group label {
@@ -66,146 +181,289 @@
             margin-bottom: 8px;
             color: #555;
             font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group label i {
+            margin-right: 8px;
+            color: #764ba2;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
+            padding: 16px 20px 16px 48px;
+            border: 2px solid #e8e8e8;
+            border-radius: 14px;
             font-size: 1rem;
             transition: all 0.3s ease;
             font-family: inherit;
+            background: #fafafa;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 4px rgba(51,51,51,0.1);
+            border-color: #764ba2;
+            box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.15);
+            background: #fff;
         }
 
         .form-group textarea {
-            min-height: 150px;
+            min-height: 140px;
             resize: vertical;
+            padding-left: 48px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 42px;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .form-group input:focus ~ .input-icon,
+        .form-group textarea:focus ~ .input-icon {
+            color: #764ba2;
         }
 
         .btn-enviar {
             width: 100%;
             padding: 18px 40px;
-            background: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-enviar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-enviar:hover::before {
+            left: 100%;
         }
 
         .btn-enviar:hover {
-            background: #000;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(118, 75, 162, 0.4);
+        }
+
+        .btn-enviar i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-enviar:hover i {
+            transform: translateX(5px);
         }
 
         .info-cards {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
         }
 
         .info-card {
-            background: white;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 18px;
             padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 20px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
         }
 
         .info-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            transform: translateX(12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         .info-card .icon-wrapper {
-            width: 55px;
-            height: 55px;
-            background: #333;
-            border-radius: 14px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
         }
 
         .info-card .icon-wrapper i {
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
 
         .info-card h3 {
             font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 5px;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            font-weight: 600;
         }
 
         .info-card p {
             color: #666;
             line-height: 1.5;
+            font-size: 0.95rem;
         }
 
         .map-section {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease 0.4s both;
         }
 
         .map-section h2 {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: #1a1a2e;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 15px;
+            font-weight: 600;
         }
 
         .map-section h2 i {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .map-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 16px;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border: 2px dashed #d0d0d0;
+            transition: all 0.3s ease;
+        }
+
+        .map-container:hover {
+            border-color: #764ba2;
+            background: linear-gradient(135deg, #f0f0ff 0%, #e8e8f0 100%);
+        }
+
+        .map-container i {
+            font-size: 3.5rem;
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .map-container p {
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .map-container .address {
+            font-weight: 500;
             color: #333;
+            font-size: 1.1rem;
         }
 
-        .map-placeholder {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            border-radius: 12px;
-            padding: 60px;
+        .social-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
             text-align: center;
-            color: #666;
+            backdrop-filter: blur(10px);
         }
 
-        .map-placeholder i {
-            font-size: 3rem;
+        .social-section h3 {
+            color: #1a1a2e;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3);
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(118, 75, 162, 0.5);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        footer p {
+            opacity: 0.9;
             margin-bottom: 15px;
-            display: block;
-            color: #999;
         }
 
         .contact-logo {
+            margin-top: 40px;
             text-align: center;
-            margin-top: 30px;
         }
 
         .contact-logo img {
-            width: 120px;
+            width: 140px;
             height: auto;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .contact-logo img:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -214,29 +472,42 @@
             }
 
             .contact-header h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .contact-card {
-                padding: 25px;
+                padding: 30px 25px;
+            }
+
+            .nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .info-cards {
+                gap: 12px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
             }
         }
     </style>
 </head>
 <body>
-    <header class="pagina2">
-        <h1>NexGenTech Electronics</h1>
+    <header>
+        <div class="nav"> 
+            <a href="index.html"><i class="fas fa-gift"></i> Promociones</a>
+            <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+            <a href="carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        </div>
     </header>
-    
-    <div class="nav">
-        <a href="index.html">Promociones</a>
-        <a href="contacto.html">Contacto</a>
-    </div>
 
     <main class="contact-wrapper">
         <div class="contact-header">
-            <h1>Contáctanos</h1>
-            <p>Estamos aquí para ayudarte. Contáctanos por cualquier consulta.</p>
+            <h1>¡Hablemos!</h1>
+            <p>Estamos aquí para ayudarte. Contáctanos y te responderemos pronto.</p>
         </div>
 
         <div class="contact-container">
@@ -244,24 +515,28 @@
                 <h2><i class="fas fa-paper-plane"></i> Envíanos un mensaje</h2>
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name">Nombre completo</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        <label for="name"><i class="fas fa-user"></i> Nombre completo</label>
+                        <i class="fas fa-user input-icon"></i>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email"><i class="fas fa-at"></i> Correo electrónico</label>
+                        <i class="fas fa-envelope input-icon"></i>
                         <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Teléfono</label>
+                        <label for="phone"><i class="fas fa-phone"></i> Teléfono</label>
+                        <i class="fas fa-phone input-icon"></i>
                         <input type="tel" id="phone" name="phone" placeholder="812 568 548">
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensaje</label>
+                        <label for="message"><i class="fas fa-comment"></i> Mensaje</label>
+                        <i class="fas fa-comment-dots input-icon" style="top: 38px;"></i>
                         <textarea id="message" name="message" placeholder="¿En qué podemos ayudarte?" required></textarea>
                     </div>
                     <button type="submit" class="btn-enviar">
                         <span>Enviar mensaje</span>
-                        <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-paper-plane"></i>
                     </button>
                 </form>
             </div>
@@ -278,7 +553,7 @@
                 </div>
                 <div class="info-card">
                     <div class="icon-wrapper">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone-alt"></i>
                     </div>
                     <div>
                         <h3>Teléfono</h3>
@@ -287,7 +562,7 @@
                 </div>
                 <div class="info-card">
                     <div class="icon-wrapper">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope-open-text"></i>
                     </div>
                     <div>
                         <h3>Correo electrónico</h3>
@@ -296,7 +571,7 @@
                 </div>
                 <div class="info-card">
                     <div class="icon-wrapper">
-                        <i class="fas fa-location-dot"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div>
                         <h3>Ubicación</h3>
@@ -307,30 +582,48 @@
         </div>
 
         <div class="map-section">
-            <h2><i class="fas fa-map-location-dot"></i> Nuestra ubicación</h2>
-            <div class="map-placeholder">
-                <i class="fas fa-map"></i>
-                <p>Col. Cumbres 1er Sector, Monterrey, NL. CP. 64610</p>
+            <h2><i class="fas fa-map-marked-alt"></i> Encuéntranos</h2>
+            <div class="map-container">
+                <i class="fas fa-globe-americas"></i>
+                <p>Visítanos en nuestra tienda física</p>
+                <p class="address">Col. Cumbres 1er Sector, Monterrey, NL. CP. 64610</p>
             </div>
             <div class="contact-logo">
-                <img src="imagenes/logo.png" alt="logo NexGenTech Electronics">
+                <img src="imagenes/logo.png" alt="Logo NexGenTech Electronics">
+            </div>
+        </div>
+
+        <div class="social-section">
+            <h3>Síguenos en redes sociales</h3>
+            <div class="social-links">
+                <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </main>
 
     <footer>
         <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
-        <a href=""><i class="fab fa-facebook-f" style="color: white; padding: 5px;"></i></a>
-        <a href=""><i class="fab fa-instagram" style="color: white; padding: 5px;"></i></a>
-        <a href=""><i class="fab fa-x-twitter" style="color: white; padding: 5px;"></i></a>
-        <a href=""><i class="fas fa-envelope" style="color: white; padding: 5px;"></i></a>
     </footer>
 
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
-            this.reset();
+            
+            const btn = this.querySelector('.btn-enviar');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje enviado!';
+            btn.style.background = 'linear-gradient(135deg, #00b894 0%, #00cec9 100%)';
+            
+            setTimeout(() => {
+                alert("Tu mensaje ha sido enviado. Nos pondremos en contacto contigo pronto.");
+                this.reset();
+                btn.innerHTML = originalHTML;
+                btn.style.background = '';
+            }, 1500);
         });
     </script>
 </body>

@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Monitor</title>
-        <link rel="stylesheet" href="css/teclado.css"/>
-        <link rel="stylesheet" href="css/pia.css"/>
-        <script src="js/carro.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="nav"> 
-                <a href="contacto.html">Contacto</a>
-                <a href="index.html">Promociones</a>
-                <a class="icon" href="carrito.html">
-                    <img src="imagenes/car.png" alt="Carro de Compras">
-                    <span id="cuenta-car">0</span>
-                </a>     
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Samsung Curvo 24" | NexGenTech</title>
+    <link rel="stylesheet" href="css/teclado.css"/>
+    <link rel="stylesheet" href="css/pia.css"/>
+    <script src="js/carro.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav"> 
+            <a href="contacto.html">Contacto</a>
+            <a href="index.html">Promociones</a>
+            <a class="icon" href="carrito.html">
+                <img src="imagenes/car.png" alt="Carro de Compras">
+                <span id="cuenta-car">0</span>
+            </a>     
+        </div>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="image-container">
+                <img src="imagenes/pantalla.jpg" alt="Monitor Samsung Curvo">
             </div>
-        </header>
-        <main>
-            <section class="product-details">
-                <div class="image-container">
-                    <img src="imagenes/pantalla.jpg" alt="Monitor SAMSUNG LC24F396FHLXZX">
+            <div class="info-container">
+                <h1>Samsung LC24F396FHLXZX Monitor Curvo</h1>
+                <div class="ratings">
+                    <span class="rating-stars">★★★★★</span>
+                    <span class="rating-value">5.0</span>
+                    <span class="reviews-count">1,780 calificaciones</span>
                 </div>
-                <div class="info-container">
-                    <h1>SAMSUNG LC24F396FHLXZX</h1>
-                    <p>Monitor con Panel Curvo 24", Super Delgado y Elegante, Experiencia de Juego Mejorada.
-                    Una curva profunda para una experiencia inmersiva.
-                    Pantalla de 1,800R para mayor comodidad.
-                    Avanzado panel con menos fugas de luz.
-                    Pantalla de 23.5" pulgadas.
-                    Resolución de la pantalla de 1920 x 1080 pixeles.
-                    </p>
-                    <div class="ratings">
-                        <span class="rating-stars">★★★★★</span>
-                        <span class="rating-value">5.0</span>
-                        <span class="reviews-count">1780 calificaciones</span>
-                    </div>
-                    <div class="price">$21000</div>
-                    <div class="oferta">$15000 MXN</div>
-                    <div class="button-container">
-                        <button onclick="addToCart('SAMSUNG LC24F396FHLXZX', 15000, 'imagenes/pantalla.jpg')">Agregar al carrito</button>
-                    </div>
+                <p>Monitor curvo de 24" con diseño super delgado y elegante. Curva profunda de 1,800R para una experiencia inmersiva. Panel avanzado con menos fugas de luz. Resolución FHD 1920 x 1080. Ideal para gaming y trabajo.</p>
+                <div class="price-container">
+                    <span class="price">$21,000 MXN</span>
+                    <span class="oferta">$15,000 MXN</span>
+                    <span class="badge-descuento">-29%</span>
                 </div>
-            </section>
-        </main>
-    
-        <footer>
-            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
-        </footer>
-    
-        <script src="script.js"></script>
-    </body>
+                <div class="caracteristicas">
+                    <h3>Características Principales</h3>
+                    <ul>
+                        <li>Pantalla curva 1,800R</li>
+                        <li>Resolución FHD 1080p</li>
+                        <li>23.5 pulgadas</li>
+                        <li>Diseño ultra delgado</li>
+                    </ul>
+                </div>
+                <div class="button-container">
+                    <button class="btn-comprar btn-carrito" onclick="addToCart('SAMSUNG LC24F396FHLXZX', 15000, 'imagenes/pantalla.jpg')">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>

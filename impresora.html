@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Impresora 3D</title>
-        <link rel="stylesheet" href="css/teclado.css"/>
-        <link rel="stylesheet" href="css/pia.css"/>
-        <script src="js/carro.js"></script>
-    </head>
-    <body>
-        <header>
-            <div class="nav"> 
-                <a href="contacto.html">Contacto</a>
-                <a href="index.html">Promociones</a>
-                <a class="icon" href="carrito.html">
-                    <img src="imagenes/car.png" alt="Carro de Compras">
-                    <span id="cuenta-car">0</span>
-                </a>     
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresora 3D Creality K1 SE | NexGenTech</title>
+    <link rel="stylesheet" href="css/teclado.css"/>
+    <link rel="stylesheet" href="css/pia.css"/>
+    <script src="js/carro.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav"> 
+            <a href="contacto.html">Contacto</a>
+            <a href="index.html">Promociones</a>
+            <a class="icon" href="carrito.html">
+                <img src="imagenes/car.png" alt="Carro de Compras">
+                <span id="cuenta-car">0</span>
+            </a>     
+        </div>
+    </header>
+
+    <main>
+        <section class="product-details">
+            <div class="image-container">
+                <img src="imagenes/a.png" alt="Impresora 3D Creality K1 SE">
             </div>
-        </header>
-        <main>
-            <section class="product-details">
-                <div class="image-container">
-                    <img src="imagenes/a.png" alt="Impresora 3D">
+            <div class="info-container">
+                <h1>Creality K1 SE Impresora 3D 600mm/s</h1>
+                <div class="ratings">
+                    <span class="rating-stars">★★★★</span>
+                    <span class="rating-value">4.6</span>
+                    <span class="reviews-count">1,835 calificaciones</span>
                 </div>
-                <div class="info-container">
-                    <h1>Creality K1 SE Impresora 3D Nueva 2024 600mm/s</h1>
-                    <p>Alta Velocidad Nivelación Automática Nivel Insignia Extrusor Directo Intercambio Rápido Boquilla Tri-Metal Impresoras 3D Mejorada K1</p>
-                    <div class="ratings">
-                        <span class="rating-stars">★★★★</span>
-                        <span class="rating-value">4.6</span>
-                        <span class="reviews-count">1835 calificaciones</span>
-                    </div>
-                    <div class="price">$12000</div>
-                    <div class="oferta">$11400 MXN</div>
-                    <div class="button-container">
-                        <button onclick="addToCart('Creality K1 SE Impresora 3D Nueva 2024', 11400, 'imagenes/a.png')">Agregar al carrito</button>
-                    </div>
+                <p>Alta velocidad de impresión hasta 600mm/s. Nivelación automática para mayor precisión. Extrusor directo con intercambio rápido de boquilla. Boquilla tri-metal para mejor disipación de calor. Modelo insignia 2024.</p>
+                <div class="price-container">
+                    <span class="price">$12,000 MXN</span>
+                    <span class="oferta">$11,400 MXN</span>
+                    <span class="badge-descuento">-5%</span>
                 </div>
-            </section>
-        </main>
-    
-        <footer>
-            <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
-        </footer>
-    </body>
+                <div class="caracteristicas">
+                    <h3>Características Principales</h3>
+                    <ul>
+                        <li>Velocidad 600mm/s</li>
+                        <li>Nivelación automática</li>
+                        <li>Boquilla tri-metal</li>
+                        <li>Extrusor directo</li>
+                    </ul>
+                </div>
+                <div class="button-container">
+                    <button class="btn-comprar btn-carrito" onclick="addToCart('Creality K1 SE Impresora 3D Nueva 2024', 11400, 'imagenes/a.png')">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
 </html>

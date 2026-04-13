@@ -3,53 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras - Productos Tecnológicos</title>
+    <title>Carrito de Compras - NexGenTech Electronics</title>
     <link rel="stylesheet" href="css/carrito.css">
     <link rel="stylesheet" href="css/promociones.css">
     <link rel="stylesheet" href="css/formulario.css">
     <link rel="stylesheet" href="css/ticket.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Carrito de Compras</h1>
+        <h1><i class="fas fa-shopping-cart"></i> Carrito de Compras</h1>
     </header>
+    
     <div class="nav"> 
-        <a href="contacto.html">Contacto</a>
-        <a href="index.html">Promociones</a>
+        <a href="index.html"><i class="fas fa-tags"></i> Promociones</a>
+        <a href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
     </div>
+    
     <main>
-        <!-- Contenedor donde se mostrarán los productos del carrito -->
-        <div id="carrito-contenedor"></div>
-        <button class="boton-pago">Continuar pago</button>
+        <div class="carrito-container">
+            <div class="carrito-header">
+                <span>Imagen</span>
+                <span>Producto</span>
+                <span>Precio</span>
+                <span>Cantidad</span>
+                <span>Eliminar</span>
+            </div>
+            
+            <div id="carrito-contenedor"></div>
+            
+            <div class="carrito-footer">
+                <div class="total">
+                    <span class="total-label">Total:</span>
+                    <span class="total-amount" id="total-monto">$0</span>
+                </div>
+                <button class="boton-pago" onclick="abrirModalPago()">
+                    <i class="fas fa-credit-card"></i>
+                    Continuar pago
+                </button>
+            </div>
+        </div>
     </main>
     
-        
     <div id="modal-overlay" class="modal-overlay" style="display: none;"></div>
 
     <div id="modal-pago" class="modal" style="display: none;">
         <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Pago con Tarjeta</h2>
+            <span class="close" onclick="cerrarModalPago()">&times;</span>
+            <h2><i class="fas fa-credit-card"></i> Pago con Tarjeta</h2>
             <form id="form-pago">
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" placeholder="Ingre el nombre" required>
+                <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Ingresa el nombre" required>
     
-                <label for="tarjeta">Numero de tarjeta</label>
+                <label for="tarjeta"><i class="fas fa-credit-card"></i> Número de tarjeta</label>
                 <input type="text" id="tarjeta" placeholder="0000 0000 0000 0000" required maxlength="16">
     
                 <div class="exp-cvv">
                     <div>
-                        <label for="exp">Fecha de vencimiento</label>
+                        <label for="exp"><i class="fas fa-calendar"></i> Vencimiento</label>
                         <input type="text" id="exp" placeholder="MM/YY" required maxlength="5">
                     </div>
                     <div>
-                        <label for="cvv">CVV</label>
+                        <label for="cvv"><i class="fas fa-lock"></i> CVV</label>
                         <input type="text" id="cvv" placeholder="CVV" required maxlength="3">
                     </div>
                 </div>
     
-                <button type="submit" class="boton-pagar">Comprar</button>
+                <button type="submit" class="boton-pagar">
+                    <i class="fas fa-check"></i> Completar compra
+                </button>
             </form>
         </div>
     </div>
@@ -57,19 +79,24 @@
     <div id="recibo-compra" class="modal">
         <div class="modal-content">
             <span class="close" id="close-recibo">&times;</span>
-            <h2>Recibo de Compra</h2>
+            <h2><i class="fas fa-receipt"></i> Recibo de Compra</h2>
             <div id="detalle-recibo"></div>
-            <button id="cerrar-recibo">Cerrar</button>
-            <button id="descargar-factura" class="boton-descargar">Descargar Factura</button>
+            <div style="display: flex; gap: 10px;">
+                <button id="cerrar-recibo">Cerrar</button>
+                <button id="descargar-factura" class="boton-descargar">
+                    <i class="fas fa-download"></i> Factura
+                </button>
+            </div>
         </div>
     </div>
     <div id="modal-overlay-recibo"></div>
 
+    <footer>
+        <p>&copy; 2024 NexGenTech Electronics. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="js/carro.js"></script>
     <script src="js/pago.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-
-
-
 </body>
 </html>
