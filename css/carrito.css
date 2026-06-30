@@ -465,7 +465,7 @@ main {
 footer {
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
     color: #fff;
-    padding: 2rem;
+
     text-align: center;
     margin-top: 50px;
 }

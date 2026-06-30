@@ -1,10 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
     actualizarContadorCarrito();
+    inicializarDarkMode();
 
     if (document.title === "Carrito de Compras - NexGenTech Electronics") {
         mostrarCarrito();
     }
 });
+
+// Dark Mode
+function inicializarDarkMode() {
+    const darkToggle = document.getElementById("darkToggle");
+    if (!darkToggle) return;
+
+    // Verificar preferencia guardada o del sistema
+    const modoOscuro = localStorage.getItem("darkMode");
+    const preferenciaSistema = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (modoOscuro === "true" || (modoOscuro === null && preferenciaSistema)) {
+        document.body.classList.add("dark");
+        actualizarIconoOscuro();
+    }
+
+    darkToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const estaOscuro = document.body.classList.contains("dark");
+        localStorage.setItem("darkMode", estaOscuro);
+        actualizarIconoOscuro();
+    });
+}
+
+function actualizarIconoOscuro() {
+    const darkToggle = document.getElementById("darkToggle");
+    if (!darkToggle) return;
+
+    const icono = darkToggle.querySelector("i");
+    if (document.body.classList.contains("dark")) {
+        icono.classList.remove("fa-moon");
+        icono.classList.add("fa-sun");
+    } else {
+        icono.classList.remove("fa-sun");
+        icono.classList.add("fa-moon");
+    }
+}
 
 function obtenerCarrito() {
     return JSON.parse(localStorage.getItem("carrito")) || [];
