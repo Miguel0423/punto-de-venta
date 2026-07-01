@@ -8,7 +8,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     min-height: 100vh;
-    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -51,9 +52,11 @@ header h1 {
 }
 
 main {
+    flex: 1;
     max-width: 900px;
     margin: 30px auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 .carrito-container {
@@ -465,9 +468,8 @@ main {
 footer {
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
     color: #fff;
-
     text-align: center;
-    margin-top: 50px;
+    padding: 20px;
 }
 
 footer p {
