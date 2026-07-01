@@ -15,9 +15,6 @@
         <div class="nav"> 
             <a href="contacto.html">Contacto</a>
             <a href="index.html">Promociones</a>
-            <button id="darkToggle" class="dark-mode-toggle" title="Cambiar a modo oscuro">
-                <i class="fas fa-moon"></i>
-            </button>
             <a class="icon" href="carrito.html">
                 <img src="imagenes/car.png" alt="Carro de Compras">
                 <span id="cuenta-car">0</span>
@@ -66,35 +63,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <style>
-        .dark-mode-toggle {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #fff;
-            padding: 8px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        .dark-mode-toggle:hover {
-            background: rgba(255,255,255,0.2);
-        }
-        body.dark {
-            filter: invert(0.1) hue-rotate(180deg);
-        }
-        body.dark .product-details {
-            background: #1a1a2e;
-            color: #f0f0f0;
-        }
-        body.dark .info-container {
-            background: #16213e;
-            color: #f0f0f0;
-        }
-        body.dark footer {
-            background: #0a0a1a;
-            color: #aaa;
-        }
-    </style>
 </body>
 </html>
