@@ -3,20 +3,22 @@
     const TOGGLE_ID = 'darkToggle';
     const STORAGE_KEY = 'darkMode';
 
-    function initDarkMode() {
-        const toggle = document.getElementById(TOGGLE_ID);
-        if (!toggle) return;
-
-        // Aplicar tema guardado o preferencia del sistema
+    function applySavedTheme() {
         const saved = localStorage.getItem(STORAGE_KEY);
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         if (saved === 'true' || (saved === null && prefersDark)) {
             document.body.classList.add('dark');
         }
+    }
+
+    function initDarkMode() {
+        applySavedTheme();
+
+        const toggle = document.getElementById(TOGGLE_ID);
+        if (!toggle) return;
 
         updateIcon();
-
         toggle.addEventListener('click', toggleDarkMode);
     }
 

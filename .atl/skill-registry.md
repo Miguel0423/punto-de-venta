@@ -27,7 +27,9 @@ Last updated: 2026-07-01
 | `cognitive-doc-design` | Design docs that reduce cognitive load. Trigger: writing guides, READMEs, RFCs, onboarding, architecture, or review-facing docs. | user | `C:\Users\MikyG\.config\opencode\skills\cognitive-doc-design\SKILL.md` |
 | `comment-writer` | Write warm, direct collaboration comments. Trigger: PR feedback, issue replies, reviews, Slack messages, or GitHub comments. | user | `C:\Users\MikyG\.config\opencode\skills\comment-writer\SKILL.md` |
 | `find-skills` | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill. | user | `C:\Users\MikyG\.agents\skills\find-skills\SKILL.md` |
+
 | `frontend-design` | Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults. | project | `C:\Users\MikyG\OneDrive\Escritorio\punto-de-venta\.agents\skills\frontend-design\SKILL.md` |
+
 | `go-testing` | Trigger: Go tests, go test coverage, Bubbletea teatest, golden files. Apply focused Go testing patterns. | user | `C:\Users\MikyG\.config\opencode\skills\go-testing\SKILL.md` |
 | `issue-creation` | Create Gentle AI issues with issue-first checks. Trigger: creating GitHub issues, bug reports, or feature requests. | user | `C:\Users\MikyG\.config\opencode\skills\issue-creation\SKILL.md` |
 | `judgment-day` | Trigger: judgment day, dual review, adversarial review, juzgar. Run blind dual review, fix confirmed issues, then re-judge. | user | `C:\Users\MikyG\.config\opencode\skills\judgment-day\SKILL.md` |
