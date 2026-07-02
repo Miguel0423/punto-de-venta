@@ -174,7 +174,7 @@ a {
 
 body.dark .dark-mode-toggle {
     background: var(--white);
-    color: var(--white);
+    color:white;
     border-color: var(--border-dark);
 }
 
